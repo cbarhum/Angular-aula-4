@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Formulário principal</h1>
+  <form class="mainForm" [formGroup]="mainForm">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" class="form-control" placeholder="Nome" formControlName="nome">
+      </div>
+
+      <div class="form-group">
+        <label for="sobrenome">sobrenome</label>
+        <input type="text" name="sobrenome" class="form-control" placeholder="sobrenome" formControlName="sobrenome">
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="text" name="email" class="form-control" placeholder="email" formControlName="email">
+      </div>
+
+      <div class="form-group">
+        <label for="genero">Genero</label>
+        <select name="genero" id="genero" formControl="genero" class="form-control">
+          <option value="">Selecione</option>
+        <option *ngFor="let genero of generos" [value]="genero.valor">{{genero.nome}}</option>
+      </select>
+      </div>
+  </form>
+
+  <pre>
+    {{mainForm.value | json}}
+    </pre>
+</div>
